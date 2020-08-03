@@ -5,45 +5,9 @@ $(document).ready(function() {
 	});
 
 	$('.map__title').click(function(event){
-		$(this).toggleClass('open').next().slideToggle(300);
+		$(this).toggleClass('open').next().slideToggle(500);
 	});
-});
 
-$('.banner-area').slick({
-	autoplay: true,
-	speed: 1000,
-	arrows: true,
-	dots: false,
-	autoplaySpeed: 3000,
-	fade: true,
-	responsive:[
-	{
-		breakpoint: 768,
-		settings: {
-			arrows: false
-		}
-	}
-	]
-});
-
-$('.slider-team').slick({
-	autoplay: true,
-	speed: 1000,
-	arrows: false,
-	dots: true,
-	autoplaySpeed: 3000,
-	fade: true,
-	responsive:[
-	{
-		breakpoint: 768,
-		settings: {
-			arrows: false
-		}
-	}
-	]
-});
-
-$(document).ready(function(){
 	$('.slider-row').slick({
 		arrows:true,
 		slidesToShow:3,
@@ -67,10 +31,43 @@ $(document).ready(function(){
 		}
 		]
 	});
+
+	$('.banner-area').slick({
+		autoplay: true,
+		speed: 1000,
+		arrows: true,
+		dots: false,
+		autoplaySpeed: 3000,
+		fade: true,
+		responsive:[
+		{
+			breakpoint: 768,
+			settings: {
+				arrows: false
+			}
+		}
+		]
+	});
+
+	$('.team__row').slick({
+		autoplay: true,
+		speed: 1000,
+		arrows: false,
+		dots: false,
+		autoplaySpeed: 3000,
+		fade: true,
+		responsive:[
+		{
+			breakpoint: 768,
+			settings: {
+				arrows: false
+			}
+		}
+		]
+	});
 });
 
-	// Initialize and add the map
-	function initMap() {
+function initMap() {
 	  // The location of Uluru
 	  var uluru = {lat: 49.7999654, lng: 73.095208};
 	  // The map, centered at Uluru
