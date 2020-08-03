@@ -51,6 +51,7 @@ $maxWidth: 1000;
 //================================================================================================================================================================================================================================================================
 body{
 	overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
 }
 .wrapper {
 	min-height: 100%;
@@ -90,7 +91,7 @@ body.lock{
 	left: 0;
 	right: 0;
 	@media (max-width: 480px) {
-		height: 70px;
+		height: 50px;
 	}
 	&:before{
 		content: "";
@@ -109,7 +110,7 @@ body.lock{
 		height: 100px;
 		align-items: center;
 		@media (max-width: 480px) {
-			height: 70px;
+			height: 50px;
 		}
 	}
 	&__logo {
@@ -163,11 +164,11 @@ body.lock{
 			transform: scale(0);
 		}
 		&.active:before{
-			transform:rotate(-45deg);
+			transform:rotate(45deg);
 			top: 9px;
 		}
 		&.active:after{
-			transform:rotate(45deg);
+			transform:rotate(-45deg);
 			bottom: 9px;
 		}
 	}
@@ -235,6 +236,9 @@ body.lock{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
+	@media (max-width: 480px) {
+		width: 100%;
+	}
 	.banner-topic {
 		font-family: 'Big Noodle Titling';
 		color: #d6d5d5;
@@ -390,6 +394,9 @@ body.lock{
 .item-about {
 	background-color: #ebebeb;
 	padding: 30px 30px 20px 30px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
 	&__icon {
 		margin: 0 auto;
 		width: 57px;
@@ -409,6 +416,7 @@ body.lock{
 		text-align: center;
 	}
 	&__text {
+		flex: 1 1 auto;
 		text-align: center;
 		color: #707070;
 		font-family: 'ROBOTO-THIN';
@@ -453,6 +461,7 @@ body.lock{
 			@media (max-width: 480px) {
 				margin: 20px auto 0px;
 				padding: 0px 20px;
+				font-size: 26px;
 			}
 		}
 		&__text {
@@ -614,14 +623,12 @@ body.lock{
 		}
 	}
 	&__item {
-		padding: 0px 0px 0px 40px;
 		transition: all 0.3s ease 0s;
-		@media (max-width: 550px) {
-			padding: 0px 0px 0px 230px;
-		}
 		img{
 			max-width: 100%;
+			cursor: pointer;
 			display: block;
+			margin: 0 auto;
 		}
 	}
 }
@@ -629,7 +636,6 @@ body.lock{
 //================================================================================================================================================================================================================================================================
 //================================================================================================================================================================================================================================================================
 .team {
-	&__body {}
 	&__header {
 		margin: 80px 0px 0px 0px;
 		@media (max-width: 768px) {
@@ -645,6 +651,8 @@ body.lock{
 	}
 	&__row {
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		margin: 80px 0px 80px 0px;
 		@media (max-width: 768px) {
 			flex-direction: column;
@@ -655,7 +663,13 @@ body.lock{
 		}
 	}
 	&__man {
+		justify-content: center;
+		align-items: center;
+		flex: 0 0 auto;
 		background-color: #ebebeb;
+		@media (max-width: 768px) {
+			flex: 0 0 100%;
+		}
 	}
 	&__photo {
 		padding: 70px 70px 30px 70px;
@@ -664,7 +678,7 @@ body.lock{
 			display: block;
 		}
 		@media (max-width: 768px) {
-			padding: 40px 0px 20px 0px;
+			padding: 20px 0px 20px 0px;
 			display: flex;
 			justify-content: center;
 		}
@@ -674,18 +688,16 @@ body.lock{
 		text-align: center;
 		margin: 0 auto;
 		color: #3d3d3d;
-		font-family: 'Roboto', sans-serif;
 		font-size: 20px;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 2px;
 	}
 	&__specialty {
-		max-width: 75px;
+		max-width: 100px;
 		text-align: center;
-		margin: 6px auto;
+		margin: 10px auto;
 		color: #3d3d3d;
-		font-family: 'Roboto', sans-serif;
 		font-size: 14px;
 		font-weight: 300;
 		text-transform: uppercase;
@@ -693,25 +705,35 @@ body.lock{
 	}
 	&__social {
 		text-align: center;
-		margin: 20px auto 70px;
+		margin: 20px auto 0px;
 		color: #696969;
 		font-size: 14px;
 		font-weight: 400;
 		letter-spacing: 1.4px;
 		@media (max-width: 768px) {
-			margin: 20px auto 40px;
+			padding: 0px 0px 20px 0px;
 		}
 	}
 	&__about {
-		margin: 0px 0px 0px 20px;
-		background-color: #ebebeb;
+		width: 100%;
+		display: flex;
 		@media (max-width: 768px) {
-			margin: 20px 0px 0px 0px;
+			display: block;
 		}
 	}
 	&__content{
-		margin: 0 auto;
-		width: 80%;
+		margin: 0px 0px 0px 20px;
+		padding: 0px 60px;
+		justify-content: center;
+		align-items: center;
+		background-color: #ebebeb;
+		@media (max-width: 768px) {
+			margin: 0px 0px 0px 0px;
+			flex: 0 0 100%;
+			@media (max-width: 480px) {
+				padding: 0px 20px;
+			}
+		}
 	}
 	&__skills {
 		margin: 80px 0px 0px 0px;
@@ -721,8 +743,9 @@ body.lock{
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 2.4px;
-		@media (max-width: 480px) {
-			margin: 40px 0px 0px 0px;
+		@media (max-width: 768px) {
+			margin: 20px 0px 0px 0px;
+			padding: 20px 0px 0px 0px;
 		}
 	}
 	&__word {
@@ -743,7 +766,7 @@ body.lock{
 	&__line-1 {
 		display: flex;
 		justify-content: space-between;
-		@media (max-width: 350px) {
+		@media (max-width: 550px) {
 			flex-direction: column;
 		}
 	}
@@ -752,7 +775,6 @@ body.lock{
 	&__text {
 		width: 190px;
 		color: #3d3d3d;
-		font-family: 'Roboto', sans-serif;
 		font-size: 14px;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -765,8 +787,8 @@ body.lock{
 		font-size: 14px;
 		font-weight: 300;
 		margin: 0px 0px 15px 20px;
-		@media (max-width: 350px) {
-			margin: 0px 0px 15px 0px;
+		@media (max-width: 550px) {
+			margin: 10px 0px 15px 0px;
 		}
 	}
 }
@@ -839,6 +861,17 @@ body.lock{
 		opacity: .6;
 	}
 }
+.team__row {
+	&__item {
+		transition: all 0.3s ease 0s;
+		img{
+			max-width: 100%;
+			cursor: pointer;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
 //================================================================================================================================================================================================================================================================
 //================================================================================================================================================================================================================================================================
 //================================================================================================================================================================================================================================================================
@@ -847,19 +880,25 @@ body.lock{
 	background-color: #171f23;
 	&__title {
 		padding: 60px 0px 0px 0px;
+		@media (max-width: 480px) {
+			padding: 20px 0px 0px 0px;
+		}
 	}
 	&__row {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		padding: 60px 0px 60px 0px;
+		@media (max-width: 480px) {
+			padding: 60px 0px 20px 0px;
+		}
 	}
 	&__column {
 		flex: 0 1 25%;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
+		min-height: 100%;
 		@media (max-width: 768px) {
 			flex: 0 1 33.3333%;
 		}
@@ -875,15 +914,21 @@ body.lock{
 		img{
 			max-width: 100%;
 			display: block;
+			margin: 0 auto;
 		}
 	}
 	&__topic {
+		max-width: 150px;
 		margin: 20px 0px;
 		text-align: center;
 		color: #f6f6f6;
 		font-family: 'Roboto', sans-serif;
 		font-size: 18px;
+		@media (max-width: 480px) {
+			font-size: 16px;
+		}
 		font-weight: 300;
+		flex: 1 1 auto;
 	}
 	&__count {
 		text-align: center;
@@ -893,6 +938,9 @@ body.lock{
 		font-weight: 300;
 		@media (max-width: 768px) {
 			padding: 0px 0px 20px 0px;
+		}
+		@media (max-width: 480px) {
+			font-size: 40px;
 		}
 	}
 }
@@ -956,6 +1004,7 @@ body.lock{
 		flex: 0 1 33.3333%;
 		display: flex;
 		flex-direction: column;
+		min-height: 100%;
 		@media (max-width: 768px) {
 			flex: 0 1 50%;
 			margin: 0px 0px 20px 0px;
@@ -967,8 +1016,9 @@ body.lock{
 	}
 	&__picture {
 		background-color: #787474;
-		flex: 0 0 210px;
 		position: relative;
+		flex: 1 1 auto;
+		background: url(../img/blog/01.webp) 0 0 / 100% no-repeat;
 		&:hover{
 			.blog__hover{
 				display: flex;
@@ -978,6 +1028,7 @@ body.lock{
 			max-width: 100%;
 			display: block;
 			object-fit: cover;
+			flex: 1 1 auto;
 		}
 	}
 	&__hover{
@@ -986,6 +1037,9 @@ body.lock{
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		@media (max-width: 480px) {
+			display: flex;
+		}
 		a{
 			text-decoration: none;
 			cursor: pointer;
@@ -997,7 +1051,8 @@ body.lock{
 	&__content{
 		background-color: #ebebeb;
 		margin: 0 auto;
-		padding:40px 30px 25px 30px;
+		flex: 1 1 auto;
+		padding:40px 30px 0px 30px;
 		@media (max-width: 480px) {
 			padding: 20px 15px 12px 15px;
 		}
@@ -1017,14 +1072,22 @@ body.lock{
 		font-weight: 400;
 		letter-spacing: 0.7px;
 		margin: 30px 0px;
+		p{
+			margin: 0px 0px 20px 0px;
+			&:last-child{
+				margin: 0;
+			}
+		}
 		@media (max-width: 480px) {
 			margin: 20px 0px;
 		}
 	}
 	&__data {
+		background-color: #ebebeb;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding:20px 30px 20px 30px;
 	}
 	&__clock{
 		display: flex;
@@ -1117,22 +1180,26 @@ body.lock{
 			margin: 0px 0px 20px 0px;
 		}
 		@media (max-width: 480px) {
-			flex: 0 1 100%;
+			flex: 0 1 80%;
 		}
 	}
 	&__item {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		height: 100%;
 		width: 100%;
 		border: 1px solid transparent;
+		border-bottom: none;
+		background-color: #1f282c;
 		&:hover{
 			transition: all 0.3s ease 0s;
 			border: 1px solid #f6744b;
 			border-bottom: none;
-			.price__content{
-				transition: all 0.3s ease 0s;
-				background-color: #171f23;
+			transition: all 0.3s ease 0s;
+			background-color: #171f23;
+			@media (max-width: 480px) {
+				border: 1px solid #f6744b;
 			}
 			.price__argument{
 				span{
@@ -1141,6 +1208,9 @@ body.lock{
 				}
 			}
 		}
+	}
+	&__content{
+		flex: 1 1 auto;
 	}
 	&__heading{
 		background-color: #0e1316;
@@ -1163,17 +1233,11 @@ body.lock{
 		font-size: 36px;
 		font-weight: 300;
 	}
-	&__content{
-		background-color: #1f282c;
-		display: flex;
-		flex-direction: column;
-	}
 	&__text{
 		margin: 70px 0px 0px 0px;
 	}
 	&__argument {
 		margin: 0px 0px 20px 0px;
-		flex: 1 1 auto;
 		text-align: center;
 		color: #ffffff;
 		font-family: 'Roboto', sans-serif;
@@ -1293,6 +1357,9 @@ body.lock{
 	background-color: #0c1215;
 	&__body {
 		padding: 30px 0px;
+		@media (max-width: 480px) {
+			padding: 20px 0px;
+		}
 	}
 	&__title {
 		cursor: pointer;
@@ -1306,6 +1373,9 @@ body.lock{
 		text-transform: uppercase;
 		letter-spacing: 2.4px;
 		position: relative;
+		@media (max-width: 480px) {
+			font-size: 20px;
+		}
 		&:before,
 		&:after{
 			content: " ";
@@ -1314,7 +1384,7 @@ body.lock{
 			background-color: #fff;
 			position: absolute;
 			top: 8px;
-			transition: all 0.3s ease 0s;
+			transition: all 0.5s ease 0s;
 		}
 		&:before{
 			right: 0;
@@ -1342,7 +1412,7 @@ body.lock{
 }
 #map{
 	width: 100%;
-	height: 600px;
+	height: 30rem;
 	margin: 20px auto;
 	border-radius: 5px;
 	@media (max-width: 480px) {
@@ -1356,6 +1426,9 @@ body.lock{
 	background-color: #171f23;
 	&__row {
 		padding: 60px 0px;
+		@media (max-width: 480px) {
+			padding: 40px 0px;
+		}
 	}
 	&__column {
 		display: flex;
